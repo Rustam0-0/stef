@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>
+			{% block title %}Garage STEF{% endblock %}
+		</title>
+
+		<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/assets/images/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<meta charset="UTF-8">
+
+		<meta name="description" content="Garage STEF Réparation automobile de véhicules automobiles légers.">
+		<meta name="keywords" content="amiens,dépannage,pneu,pneus,voiture,véhicule,d'occasione,réparation,maintenance,équilibrage,roue,jante,jantes,changer,hiver,été,saison,mécanicien">
+		<meta name="author" content="Garage STEF">
+
+		{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+			{% block stylesheets %}
+		{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+			{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}{% endblock %}<meta name="viewport" content="width=device-width, initial-scale=1"> {# <link rel="apple-touch-icon" sizes="180x180" href="/assets/favico_io/apple-touch-icon.png">
+																																																	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favico_io/favicon-32x32.png">
+																																																	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favico_io/favicon-16x16.png">
+																																																	<link rel="manifest" href="/assets/favico_io/site.webmanifest"> #}
+
+		{# slic #}
+		{# // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> #}<script src="//code.jquery.com/jquery-1.11.0.min.js"> </script>
+		<script src="/assets/slick-1.8.1/slick/slick.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/slick-1.8.1/slick/slick.css"/>
+		<link
+		rel="stylesheet" type="text/css" href="/assets/slick-1.8.1/slick/slick-theme.css"/>
+
+		{#    icons #}
+		<link href="https://static.insales-cdn.com/assets/1/7151/850927/1639401906/fonts.css" rel="stylesheet" type="text/css">
+		<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+		{# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> #}
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+		<link href="/assets/style.css" type="text/css" rel="stylesheet">
+
+		<script src="https://cdn.tiny.cloud/1/f7nrvb0b2s521028a10roouemfhy288eiu43bb2vnnrcqelq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		{# <script src="/assets/tinymce/js/tinymce/tinymce.min.js"></script> #}
+		{#
+																<script>
+																	tinymce.init({
+																		selector: 'textarea',
+																		menubar: true,
+																		plugins: 'code',
+																		plugins: 'lists',
+																		toolbar: 'numlist bullist'
+																	});
+																</script>
+																#}
+
+	</head>
+	<body>
+		<header>
+			<div class="header-content d-flex flex-wrap justify-content-between">
+				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" style="text-align:center">
+					<a href="/" title="Garage STEF">
+						<img class="img-fluid header_logo" src="/assets/images/header/stef.png">
+					</a>
+				</div>
+
+				<div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
+
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 py-3">
+					{# <blockquote class="slogan"> #}
+						{# <p>La santé de votre PC, c'est simple!<br>
+							Juste
+							<a href="#jump-here" title="Contacts">contactez-nous</a>
+							:)
+						</p> #}
+						<div class="phone">
+							<img src="/assets/images/icons/appel.png" class="icon-phone-header">
+
+							<a href="tel:0669572725" class="tel">06 69 57 27 25</a>
+						</div>
+				{# </blockquote> #}
+			</div>
+		</div>
+
+		<br>
+		<div class="d-flex flex-wrap justify-content-between nav_buttons">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 pb-4 dropdown" style="text-align: center">
+				<a type="button" href="{{path('tires')}}" class="fill">Pneus</a>
+			</div>
+			<br>
+
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" style="text-align: center">
+				<a type="button" href="{{path('cars')}}" class="fill">Véhicules d'occasion</a>
+			</div>
+		</div>
+		<br>
+
+		{# {% for type, messages in app.flashes %}
+			{% for message in messages %}
+				<div class="alert alert-{{ type }}">{{ message }}</div>
+			{% endfor %}
+		{% endfor %} #}
+	</body>
+</html>
+</header>
+{% block body %}{% endblock %}
+<footer>
+<div id="jump-here" class="contacts d-flex justify-content-between flex-wrap">
+	<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+		Nos contacts:
+	</div>
+
+	<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+		{# <i class="icon-phone icon icon-phone-footer"></i> #}
+		<img src="/assets/images/icons/appel.png" class="icon-phone-footer">
+		<a href="tel:0669572725" class="tel-footer">06 69 57 27 25</a>
+	</div>
+	<div
+		class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+		{# <i class="iconify icon-mail-footer" data-icon="ion:mail-outline"></i> #}
+		<img src="/assets/images/icons/map-black.png" class="icon-mail-footer">
+		<a href="https://goo.gl/maps/BJQwzz83m6Bb5L9n6" class="mail-footer">27B Rue Marius Petit, 80450 Camon</a>
+	</div>
+
+</div>
+<section class="section">
+	<div class="background-media"></div>
+	<div class="background-overlay" style="background-color: rgba(0,0,0,0.5);"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div>
+					<div class="visible-xs" style="height:10px;"></div>
+					<div class="visible-sm" style="height:10px;"></div>
+					<div class="visible-md" style="height:10px;"></div>
+					<div class="visible-lg" style="height:10px;"></div>
+				</div>
+
+				<div class="row main-adv">
+					<div class="col-md-3 text-center small-screen-default">
+						<div
+							class="figure element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+							{# <a href="" class="figure-image magnific" target="_self"> #}
+							<img
+							width="128" height="128" src="/assets/images/footer/euro.png" class="attachment-full size-full" alt="">
+						{# </a> #}
+						</div>
+						<div class="col-text-1 text-light element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+							<p>Bas prix</p>
+						</div>
+					</div>
+					<div class="col-md-3  text-center small-screen-default">
+						<div
+							class="figure element-top-20 element-bottom-20  " data-os-animation="none" data-os-animation-delay="0s">
+							<img width="128" height="128" src="/assets/images/footer/map.png" class="attachment-full size-full" alt="">
+						</div>
+						<div class="col-text-1 text-light element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+							<p>Intervention sur Amiens
+								<br>
+								et alentours</p>
+						</div>
+					</div>
+					<div class="col-md-3  text-center small-screen-default">
+						<div
+							class="figure element-top-20 element-bottom-20  " data-os-animation="none" data-os-animation-delay="0s">
+							<img width="128" height="128" src="/assets/images/footer/clock.jpg" class="attachment-full size-full" alt="">
+						</div>
+						<div class="col-text-1 text-light element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+							<p>Réparation<br>
+								rapide</p>
+						</div>
+					</div>
+					<div class="col-md-3  text-center small-screen-default">
+						<div
+							class="figure element-top-20 element-bottom-20  " data-os-animation="none" data-os-animation-delay="0s">
+							<img width="128" height="128" src="/assets/images/footer/line-chart.png" class="attachment-full size-full" alt="">
+						</div>
+						<div class="col-text-1 text-light element-top-20 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+							<p>Experience<br>
+								plus de 15 ans</p>
+						</div>
+					</div>
+				</div>
+				<div class="divider-wrapper " style="visibility:hidden;background-color:#FFFFFF">
+					<div class="visible-xs" style="height:7px;"></div>
+					<div class="visible-sm" style="height:7px;"></div>
+					<div class="visible-md" style="height:7px;"></div>
+					<div class="visible-lg" style="height:7px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+    {# <div id="cookie_notification">
+        <p>
+            Nous utilisons des cookies pour améliorer le site et son expérience utilisateur. En poursuivant votre navigation sur le site, vous consentez à l'utilisation de cookies. Vous pouvez toujours désactiver les cookies dans les paramètres de votre navigateur.
+        </p>
+        <button class="button cookie_accept">Accepter</button>
+    </div> #}
+</footer>
+
+<script type="text/javascript">
+$('.single-item').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    dots: true,
+    fade: true,
+    speed: 2000,
+    infinite: true,
+    cssEase: 'ease-in-out',
+    loop: true,
+	centerMode: true
+});
+</script>
+
+<script src="/assets/swiped-events.min.js"></script>
+<script src="/assets/script.js"></script>
+
+</body>
+</html>

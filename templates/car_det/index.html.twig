@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Garage STEF{% endblock %}
+
+{% block body %}
+	<nav aria-label="breadcrumb" class="offset-2 col-10">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('homepage') }}" title="Accueil" class="link_black">
+					Accueil
+				</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="{{ path('cars') }}" class="link_black">
+					Liste de voitures
+				</a>
+			</li>
+		</ol>
+	</nav>
+
+	<div class="single-item img-slide">
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/CAR/{{ car.picture }}" class="item-img" style="border-radius: 5px">
+		</div>
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/CAR/{{ car.picture2 }}" class="item-img" style="border-radius: 5px">
+		</div>
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/CAR/{{ car.picture3 }}" class="item-img" style="border-radius: 5px">
+		</div>
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/CAR/{{ car.picture4 }}" class="item-img" style="border-radius: 5px">
+		</div>
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/CAR/{{ car.picture5 }}" class="item-img" style="border-radius: 5px">
+		</div>
+	</div>
+	<div class="product-title flex-wrap d-flex justify-content-start">
+		{{ car.year }} {{ car.title }}	
+	</div>
+	<div class="product-det">
+		{{ car.description | raw }}
+	</div>
+	<div class="d-flex flex-wrap justify-content-between">
+		<div class="row">
+			<strong>
+				<span class="product-prices">
+					&euro;
+					{{ car.price }}
+				</span>
+			</strong>
+		</div>
+	</div>
+{% endblock %}

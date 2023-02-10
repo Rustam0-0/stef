@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Garage STEF
+{% endblock %}
+
+{% block body %}
+	<nav aria-label="breadcrumb" class="offset-2 col-10">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('homepage') }}" title="Accueil" class="link_black">
+					Accueil
+				</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="{{ path('tires') }}" class="link_black">
+					Liste de pneus
+				</a>
+			</li>
+		</ol>
+	</nav>
+
+	<div class="single-item img-slide">
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/TIRE/{{ tire.picture }}" class="item-img" style="border-radius: 5px">
+		</div>
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/TIRE/{{ tire.picture2 }}" class="item-img" style="border-radius: 5px">
+		</div>
+		<div class="figure p-3 single-img">
+			<img src="/assets/images/TIRE/{{ tire.picture3 }}" class="item-img" style="border-radius: 5px">
+		</div>
+	</div>
+	<div class="product-title flex-wrap d-flex justify-content-start">
+		{{ tire.mark }}
+	</div>
+	<div>{{ tire.width }}/{{ tire.height }}
+		{{ tire.diameter }}
+		<img src="/assets/images/icons/{{tire.season.picture}}" title={{tire.season}} style="width:20px;">
+	</div>
+	<div class="product-det">
+		{{ tire.description | raw }}
+	</div>
+	<div class="d-flex flex-wrap justify-content-between">
+		<div class="row">
+			<strong>
+				<span class="product-prices">
+					&euro;
+					{{ tire.price }}
+				</span>
+			</strong>
+		</div>
+	</div>
+{% endblock %}

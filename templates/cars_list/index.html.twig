@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Garage STEF{% endblock %}
+
+{% block body %}
+
+	<nav aria-label="breadcrumb" class="offset-2 col-10">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('homepage') }}" title="Accueil" class="link_black">
+					Accueil
+				</a>
+			</li>
+		</ol>
+	</nav>
+
+	<div id="results" class="container-fluid">
+		{% for car in cars %}
+			<article class="results_product_item">
+				<div class="d-flex flex-wrap justify-content-center">
+					<a class="results_product_item_image_container" href="{{ path('car_det',{id:car.id}) }}" title="Voir l'article">
+						<img src="/assets/images/CAR/{{ car.picture }}" alt="{{ car.picture }}" class="img-fluid results_product_item_image lazyload">
+					</a>
+					<div class="price-block">
+						€
+						{{ car.price|number_format(0, '.', '') }}
+					</div>
+				</div>
+				<div class="product-caption">
+					<div class="product-title">
+						<strong>
+							<a href="{{ path('car_det',{id:car.id}) }}" title="Voir l'article" class="link_black">
+								{{ car.year }} {{ car.title }}
+							</a>
+						</strong>
+					</div>
+				</div>
+			</article>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tire{% endblock %}
+
+{% block body %}
+    <h1>Tire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tire.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ tire.mark }}</td>
+            </tr>
+            <tr>
+                <th>Saison</th>
+                <td>{{ tire.season }}</td>
+            </tr>
+            <tr>
+                <th>Largeur</th>
+                <td>{{ tire.width }}</td>
+            </tr>
+            <tr>
+                <th>Hauteur</th>
+                <td>{{ tire.height }}</td>
+            </tr>
+            <tr>
+                <th>Diamètre</th>
+                <td>{{ tire.diameter }}</td>
+            </tr>
+            <tr>
+                <th>État</th>
+                <td>{{ tire.new_used }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tire.description }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ tire.stock }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ tire.price }}</td>
+            </tr>
+            <tr>
+                <th>Date_add</th>
+                <td>{{ tire.dateAdd ? tire.dateAdd|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date_update</th>
+                <td>{{ tire.dateUpdate ? tire.dateUpdate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ tire.picture }}</td>
+            </tr>
+            <tr>
+                <th>Picture2</th>
+                <td>{{ tire.picture2 }}</td>
+            </tr>
+            <tr>
+                <th>Picture3</th>
+                <td>{{ tire.picture3 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tire_index') }}">back to list</a>
+
+    <a href="{{ path('app_tire_edit', {'id': tire.id}) }}">edit</a>
+
+    {{ include('tire/_delete_form.html.twig') }}
+{% endblock %}
