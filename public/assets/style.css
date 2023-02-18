@@ -70,6 +70,29 @@ li {
 
 /*////////////////////////////////////////////////////// End of Fill Button  //////////////////////////////////////////////////////*/
 
+.btn-search {
+    /* border-radius: 8px;
+    background: #ff5108 linear-gradient(#ffad8b, #ff5108);
+    box-shadow: inset #ff5d12 0 -1px 1px, inset 0 1px 1px #ffad8b, #ff5d17 0 0 0 1px;
+    
+    color: #f1f1f1;
+    text-align: center; */
+    /* margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 10px; */
+    border-color: #f1f1f1;
+    /* width: 100%; */
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(250, 248, 248);
+    background: #ff5108 linear-gradient(#ffad8b, #ff5108);
+    box-shadow: inset #ff5d12 0 -1px 1px, inset 0 1px 1px #ffad8b, #ff5d17 0 0 0 1px, rgba(0, 0, 0, .3) 0 2px 5px;
+}
+.btn-search:hover{
+    color: black;
+}
 
 .service_description {
     background-color: #f1f1f1;

@@ -12,7 +12,7 @@
 				</a>
 				/
 				<a href="{{ path('tires') }}" title="Pneus" class="link_black">
-					Rendre toute la liste
+					Tout les pneus
 				</a>
 			</li>
 		</ol>
@@ -36,48 +36,49 @@
 	</div>
 
 	{# <div class="d-flex flex-wrap justify-content-between mb-5">
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<h2>Largeur</h2>
-				<form action="" method="post">
-					<select name="search_width" style="width: 330px" class="form-control" onchange="this.form.submit()">
-						{% for width in widths %}
-							<option value="{{ width.id }}">
-								{{ width.name }}
-							</option>
-						{% endfor %}
-					</select>
-				</form>
-			</div>
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<h2>Hauter</h2>
-				<form action="" method="post">
-					<select name="search_height" style="width: 330px" class="form-control" onchange="this.form.submit()">
-						{% for height in heights %}
-							<option value="{{ height.id }}">
-								{{ height.name }}
-							</option>
-						{% endfor %}
-					</select>
-				</form>
-			</div>
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<h2>Diamètre</h2>
-				<form action="" method="post">
-					<select name="search_diameter" style="width: 330px" class="form-control" onchange="this.form.submit()">
-						{% for diameter in diameters %}
-							<option value="{{ diameter.id }}">
-								{{ diameter.name }}
-							</option>
-						{% endfor %}
-					</select>
-				</form>
-			</div>
-		</div> #}
+				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+					<h2>Largeur</h2>
+					<form action="" method="post">
+						<select name="search_width" style="width: 330px" class="form-control" onchange="this.form.submit()">
+							{% for width in widths %}
+								<option value="{{ width.id }}">
+									{{ width.name }}
+								</option>
+							{% endfor %}
+						</select>
+					</form>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+					<h2>Hauter</h2>
+					<form action="" method="post">
+						<select name="search_height" style="width: 330px" class="form-control" onchange="this.form.submit()">
+							{% for height in heights %}
+								<option value="{{ height.id }}">
+									{{ height.name }}
+								</option>
+							{% endfor %}
+						</select>
+					</form>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+					<h2>Diamètre</h2>
+					<form action="" method="post">
+						<select name="search_diameter" style="width: 330px" class="form-control" onchange="this.form.submit()">
+							{% for diameter in diameters %}
+								<option value="{{ diameter.id }}">
+									{{ diameter.name }}
+								</option>
+							{% endfor %}
+						</select>
+					</form>
+				</div>
+			</div> #}
 	<form action="" method="post">
 		<div class="d-flex flex-wrap justify-content-between mb-5">
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<h2>Largeur</h2>
+			<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-12 mt-3 ">
+				<label>Largeur</label>
 				<select name="search_width" style="width: 330px" class="form-control">
+					<option disabled selected>...</option>
 					{% for width in widths %}
 						<option value="{{ width.id }}">
 							{{ width.name }}
@@ -85,9 +86,10 @@
 					{% endfor %}
 				</select>
 			</div>
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<h2>Hauter</h2>
+			<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+				<label>Hauter</label>
 				<select name="search_height" style="width: 330px" class="form-control">
+					<option disabled selected>...</option>
 					{% for height in heights %}
 						<option value="{{ height.id }}">
 							{{ height.name }}
@@ -95,9 +97,10 @@
 					{% endfor %}
 				</select>
 			</div>
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<h2>Diamètre</h2>
+			<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+				<label>Diamètre</label>
 				<select name="search_diameter" style="width: 330px" class="form-control">
+					<option disabled selected>...</option>
 					{% for diameter in diameters %}
 						<option value="{{ diameter.id }}">
 							{{ diameter.name }}
@@ -105,8 +108,8 @@
 					{% endfor %}
 				</select>
 			</div>
-			<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-				<button type="submit">Cherher</button>
+			<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+				<button type="submit" class="btn-search mt-4">Rechercher</button>
 			</div>
 		</div>
 	</form>

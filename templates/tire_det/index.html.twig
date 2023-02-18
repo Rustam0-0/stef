@@ -19,17 +19,25 @@
 		</ol>
 	</nav>
 
-	<div class="single-item img-slide">
-		<div class="figure p-3 single-img">
-			<img src="/assets/images/TIRE/{{ tire.picture }}" class="item-img" style="border-radius: 5px">
+	{% if (tire.picture or tire.picture2 or tire.picture3)%}
+		<div class="single-item img-slide">
+			{% if (tire.picture)%}
+				<div class="figure p-3 single-img">
+					<img src="/assets/images/TIRE/{{ tire.picture }}" class="item-img" style="border-radius: 5px">
+				</div>
+			{% endif %}
+			{% if (tire.picture2)%}
+				<div class="figure p-3 single-img">
+					<img src="/assets/images/TIRE/{{ tire.picture2 }}" class="item-img" style="border-radius: 5px">
+				</div>
+			{% endif %}
+			{% if (tire.picture3)%}
+				<div class="figure p-3 single-img">
+					<img src="/assets/images/TIRE/{{ tire.picture3 }}" class="item-img" style="border-radius: 5px">
+				</div>
+			{% endif %}
 		</div>
-		<div class="figure p-3 single-img">
-			<img src="/assets/images/TIRE/{{ tire.picture2 }}" class="item-img" style="border-radius: 5px">
-		</div>
-		<div class="figure p-3 single-img">
-			<img src="/assets/images/TIRE/{{ tire.picture3 }}" class="item-img" style="border-radius: 5px">
-		</div>
-	</div>
+	{% endif %}
 	<div class="product-title flex-wrap d-flex justify-content-start">
 		{{ tire.mark }}
 	</div>

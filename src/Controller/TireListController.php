@@ -17,12 +17,50 @@ use Symfony\Component\HttpFoundation\Request;
 
 class TireListController extends AbstractController
 {
+    // /**
+    //  * @Route("/tires", name="tires")
+    //  */
+    // public function index(TireRepository $tiresRepository, WidthRepository $widths, HeightRepository $heights, DiameterRepository $diameters, Request $request): Response
+    // {
+    //     if($request->get("search_width")){
+    //         $tires = $tiresRepository->findBy(['width'=>$request->get("search_width")]);
+    //     }
+    //     elseif($request->get("search_height")){
+    //         $tires = $tiresRepository->findBy(['height'=>$request->get("search_height")]);
+    //     }
+    //     elseif($request->get("search_diameter")){
+    //         $tires = $tiresRepository->findBy(['diameter'=>$request->get("search_diameter")]);
+    //     }
+    //     else{
+    //         $tires = $tiresRepository->findAll();
+    //     }
+
+    //     return $this->render('tire_list/index.html.twig', [
+    //         'tires'=>$tires,
+    //         'widths'=>$widths->findAll(),
+    //         'heights'=>$heights->findAll(),
+    //         'diameters'=>$diameters->findAll(),
+    //     ]);
+    // }
+
     /**
      * @Route("/tires", name="tires")
      */
     public function index(TireRepository $tiresRepository, WidthRepository $widths, HeightRepository $heights, DiameterRepository $diameters, Request $request): Response
     {
-        if($request->get("search_width")){
+        if($request->get("search_width") && $request->get("search_height") && $request->get("search_diameter")){
+            $tires = $tiresRepository->findBy(['width'=>$request->get("search_width"), 'height'=>$request->get("search_height"), 'diameter'=>$request->get("search_diameter")]);
+        }
+        elseif($request->get("search_width") && $request->get("search_height")){
+            $tires = $tiresRepository->findBy(['width'=>$request->get("search_width"), 'height'=>$request->get("search_height")]);
+        }
+        elseif($request->get("search_width") && $request->get("search_diameter")){
+            $tires = $tiresRepository->findBy(['width'=>$request->get("search_width"), 'diameter'=>$request->get("search_diameter")]);
+        }
+        elseif($request->get("search_height") && $request->get("search_diameter")){
+            $tires = $tiresRepository->findBy(['height'=>$request->get("search_height"), 'diameter'=>$request->get("search_diameter")]);
+        }
+        elseif($request->get("search_width")){
             $tires = $tiresRepository->findBy(['width'=>$request->get("search_width")]);
         }
         elseif($request->get("search_height")){
@@ -30,7 +68,7 @@ class TireListController extends AbstractController
         }
         elseif($request->get("search_diameter")){
             $tires = $tiresRepository->findBy(['diameter'=>$request->get("search_diameter")]);
-        }
+        }        
         else{
             $tires = $tiresRepository->findAll();
         }
@@ -46,7 +84,7 @@ class TireListController extends AbstractController
     /**
      * @Route("/search_prod", name="search_prod", methods={"GET", "POST"})
      */
-    public function search(TireRepository $TireRepository, WidthRepository $widths, Request $request): Response
+    public function search(TireRepository $TireRepository, WidthRepository $widths, HeightRepository $heights, DiameterRepository $diameters, Request $request): Response
     {
         $value = $request->get('value');
 
@@ -59,6 +97,27 @@ class TireListController extends AbstractController
         return $this->render('tire_list/index.html.twig', [
             'tires' => $TireRepository->findBySearch($value),
             'widths'=>$widths->findAll(),
+            'heights'=>$heights->findAll(),
+            'diameters'=>$diameters->findAll(),
         ]);
     }
+
+    // /**
+    //  * @Route("/search_bysize", name="search_bysize", methods={"GET", "POST"})
+    //  */
+    // public function searchsize(TireRepository $TireRepository, WidthRepository $widths, Request $request): Response
+    // {
+    //     $value = $request->get('value');
+
+    //     if ($TireRepository->findBySearch($value)) {
+    //         $this->addFlash('success', 'Resultat de votre recherche pour: '.$value);
+    //     }
+    //     else {
+    //         $this->addFlash('warning', "Oups, on n'a rien trouvé pour: ".$value);
+    //     }
+    //     return $this->render('tire_list/index.html.twig', [
+    //         'tires' => $TireRepository->findBySearch($value),
+    //         'widths'=>$widths->findAll(),
+    //     ]);
+    // }
 }

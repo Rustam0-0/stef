@@ -47,7 +47,6 @@ class TireRepository extends ServiceEntityRepository
             ->join("t.diameter", "d")
             ->join("t.season", "s")
             ->join("t.new_used", "n")
-            // ->join("s.category", "c")
             ->andWhere('t.mark Like :value')
             ->orWhere('t.description Like :value')
             ->orWhere('w.name Like :value')
@@ -55,11 +54,8 @@ class TireRepository extends ServiceEntityRepository
             ->orWhere('d.name Like :value')
             ->orWhere('s.name Like :value')
             ->orWhere('n.name Like :value')
-
-//            ->setParameter('val', '%'.$value.'%')
             ->setParameter('value', '%'.$value.'%')
             ->orderBy('t.id', 'ASC')
-            //    ->setMaxResults(10)
             ->getQuery()
             ->getResult()
             ;
