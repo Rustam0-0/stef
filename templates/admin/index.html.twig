@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>
+			<a href="{{path('app_car_index')}}">Voitures</a>
+		</h1>
+	</div>
+	<div class="container">
+		<h1>
+			<a href="{{path('app_tire_index')}}">Pneus</a>
+		</h1>
+	</div>
+{% endblock %}

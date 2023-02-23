@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Garage STEF{% endblock %}
+{% block title %}Garage STEF
+{% endblock %}
 
 {% block body %}
 
@@ -21,20 +22,24 @@
 					<a class="results_product_item_image_container" href="{{ path('car_det',{id:car.id}) }}" title="Voir l'article">
 						<img src="/assets/images/CAR/{{ car.picture }}" alt="{{ car.picture }}" class="img-fluid results_product_item_image lazyload">
 					</a>
-					<div class="price-block">
-						€
-						{{ car.price|number_format(0, '.', '') }}
-					</div>
+					{# <div class="price-block">
+											€
+											{{ car.price|number_format(0, '.', '') }}
+										</div> #}
 				</div>
 				<div class="product-caption">
 					<div class="product-title">
 						<strong>
 							<a href="{{ path('car_det',{id:car.id}) }}" title="Voir l'article" class="link_black">
-								{{ car.year }} {{ car.title }}
+								{{ car.year }}
+								{{ car.title }}
 							</a>
-						</strong>
+						</strong> €{{ car.price|number_format(0, '.', '') }}
 					</div>
 				</div>
+				{# <div> #}
+					
+				{# </div> #}
 			</article>
 		{% endfor %}
 	</div>

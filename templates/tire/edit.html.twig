@@ -3,6 +3,20 @@
 {% block title %}Edit Tire{% endblock %}
 
 {% block body %}
+    <nav aria-label="breadcrumb" class="offset-2 col-10">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('app_admin') }}" title="Accueil ADMIN" class="link_black">
+					Accueil ADMIN
+				</a>
+			</li>
+            <li class="breadcrumb-item">
+				<a href="{{ path('app_tire_index') }}" class="link_black">
+					Liste de pneus
+				</a>
+			</li>
+		</ol>
+	</nav>
     <h1>Edit Tire</h1>
 
     {# {{ include('tire/_form.html.twig', {'button_label': 'Update'}) }}

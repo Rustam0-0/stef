@@ -1,61 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tire index{% endblock %}
+{% block title %}Tire index
+{% endblock %}
 
 {% block body %}
-    <h1>Tire index</h1>
+	<nav aria-label="breadcrumb" class="offset-2 col-10">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('app_admin') }}" title="Accueil ADMIN" class="link_black">
+					Accueil ADMIN
+				</a>
+			</li>
+		</ol>
+	</nav>
+	<h1>Tire index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Mark</th>
-                <th>Saison</th>
-                <th>Largeur</th>
-                <th>Hauteur</th>
-                <th>Diamètre</th>
-                <th>État</th>
-                {# <th>Description</th> #}
-                <th>Stock</th>
-                <th>Price</th>
-                {# <th>Date_add</th>
-                <th>Date_update</th> #}
-                {# <th>Picture</th>
-                <th>Picture2</th>
-                <th>Picture3</th> #}
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tire in tires %}
-            <tr>
-                <td>{{ tire.id }}</td>
-                <td>{{ tire.mark }}</td>
-                <td>{{ tire.season }}</td>
-                <td>{{ tire.width }}</td>
-                <td>{{ tire.height }}</td>
-                <td>{{ tire.diameter }}</td>
-                <td>{{ tire.new_used }}</td>
-                {# <td>{{ tire.description }}</td> #}
-                <td>{{ tire.stock }}</td>
-                <td>{{ tire.price }}</td>
-                {# <td>{{ tire.dateAdd ? tire.dateAdd|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tire.dateUpdate ? tire.dateUpdate|date('Y-m-d H:i:s') : '' }}</td> #}
-                {# <td>{{ tire.picture }}</td>
-                <td>{{ tire.picture2 }}</td>
-                <td>{{ tire.picture3 }}</td> #}
-                <td>
-                    <a href="{{ path('app_tire_show', {'id': tire.id}) }}">show</a>
-                    <a href="{{ path('app_tire_edit', {'id': tire.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Mark</th>
+				<th>Saison</th>
+				<th>Largeur</th>
+				<th>Hauteur</th>
+				<th>Diamètre</th>
+				<th>État</th>
+				{# <th>Description</th> #}
+				<th>Stock</th>
+				<th>Price</th>
+				{# <th>Date_add</th>
+				                <th>Date_update</th> #}
+				{# <th>Picture</th>
+				                <th>Picture2</th>
+				                <th>Picture3</th> #}
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for tire in tires %}
+				<tr>
+					<td>{{ tire.id }}</td>
+					<td>{{ tire.mark }}</td>
+					<td>{{ tire.season }}</td>
+					<td>{{ tire.width }}</td>
+					<td>{{ tire.height }}</td>
+					<td>{{ tire.diameter }}</td>
+					<td>{{ tire.new_used }}</td>
+					{# <td>{{ tire.description }}</td> #}
+					<td>{{ tire.stock }}</td>
+					<td>{{ tire.price }}</td>
+					{# <td>{{ tire.dateAdd ? tire.dateAdd|date('Y-m-d H:i:s') : '' }}</td>
+					                <td>{{ tire.dateUpdate ? tire.dateUpdate|date('Y-m-d H:i:s') : '' }}</td> #}
+					{# <td>{{ tire.picture }}</td>
+					                <td>{{ tire.picture2 }}</td>
+					                <td>{{ tire.picture3 }}</td> #}
+					<td>
+						<a href="{{ path('app_tire_show', {'id': tire.id}) }}">show</a>
+						<a href="{{ path('app_tire_edit', {'id': tire.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="11">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_tire_new') }}">Create new</a>
+	<a href="{{ path('app_tire_new') }}">Create new</a>
 {% endblock %}

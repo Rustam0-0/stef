@@ -22,7 +22,7 @@
 		<form action="{{ path('search_prod') }}" method="post" class="search-widget-form">
 			<input id="search-widget-input" class="input-field search-input" type="text" placeholder="Que recherchez-vous?" name="value">
 			<button class="button-circle is-primary shadow-none" type="submit">
-				<ion-icon name="search-outline"></ion-icon>
+				<img src="/assets/images/icons/search.png">
 			</button>
 			{% for label, messages in app.flashes (['success', 'warning']) %}
 				{% for message in messages %}
@@ -36,43 +36,43 @@
 	</div>
 
 	{# <div class="d-flex flex-wrap justify-content-between mb-5">
-				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-					<h2>Largeur</h2>
-					<form action="" method="post">
-						<select name="search_width" style="width: 330px" class="form-control" onchange="this.form.submit()">
-							{% for width in widths %}
-								<option value="{{ width.id }}">
-									{{ width.name }}
-								</option>
-							{% endfor %}
-						</select>
-					</form>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-					<h2>Hauter</h2>
-					<form action="" method="post">
-						<select name="search_height" style="width: 330px" class="form-control" onchange="this.form.submit()">
-							{% for height in heights %}
-								<option value="{{ height.id }}">
-									{{ height.name }}
-								</option>
-							{% endfor %}
-						</select>
-					</form>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
-					<h2>Diamètre</h2>
-					<form action="" method="post">
-						<select name="search_diameter" style="width: 330px" class="form-control" onchange="this.form.submit()">
-							{% for diameter in diameters %}
-								<option value="{{ diameter.id }}">
-									{{ diameter.name }}
-								</option>
-							{% endfor %}
-						</select>
-					</form>
-				</div>
-			</div> #}
+					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+						<h2>Largeur</h2>
+						<form action="" method="post">
+							<select name="search_width" style="width: 330px" class="form-control" onchange="this.form.submit()">
+								{% for width in widths %}
+									<option value="{{ width.id }}">
+										{{ width.name }}
+									</option>
+								{% endfor %}
+							</select>
+						</form>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+						<h2>Hauter</h2>
+						<form action="" method="post">
+							<select name="search_height" style="width: 330px" class="form-control" onchange="this.form.submit()">
+								{% for height in heights %}
+									<option value="{{ height.id }}">
+										{{ height.name }}
+									</option>
+								{% endfor %}
+							</select>
+						</form>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12 mt-3">
+						<h2>Diamètre</h2>
+						<form action="" method="post">
+							<select name="search_diameter" style="width: 330px" class="form-control" onchange="this.form.submit()">
+								{% for diameter in diameters %}
+									<option value="{{ diameter.id }}">
+										{{ diameter.name }}
+									</option>
+								{% endfor %}
+							</select>
+						</form>
+					</div>
+				</div> #}
 	<form action="" method="post">
 		<div class="d-flex flex-wrap justify-content-between mb-5">
 			<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-12 mt-3 ">
@@ -121,10 +121,10 @@
 					<a class="results_product_item_image_container" href="{{ path('tire_det',{id:tire.id}) }}" title="Voir l'article">
 						<img src="/assets/images/TIRE/{{ tire.picture }}" alt="{{ tire.picture }}" class="img-fluid results_product_item_image lazyload">
 					</a>
-					<div class="price-block">
+					{# <div class="price-block">
 						€
 						{{ tire.price|number_format(0, '.', '') }}
-					</div>
+					</div> #}
 				</div>
 				<div class="product-caption">
 					<div class="product-title">
